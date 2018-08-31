@@ -1,0 +1,275 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: darkgray;
+    font-family: Consolas, 'Lucida Console', monospace;
+    overflow: hidden;
+}
+
+a, a:visited {
+    color: red;
+    text-decoration: none;
+}
+
+textarea {
+    background-color: black;
+    color: darkgray;
+}
+
+button {
+    background-color: black;
+    color: darkgray;
+    border-width: 1px;
+}
+
+    button:active {
+        color: white;
+    }
+
+.logo {
+    z-index: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .logo span {
+        font-size: 420px;
+        line-height: 430px;
+        height: 420px;
+        width: 420px;
+        display: block;
+        text-align: center;
+    }
+
+.spinner {
+    animation: spin 2s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.noSelect {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.desktop {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.appContainer {
+    flex: 1 0 auto;
+    position: relative;
+}
+
+/* TASK BAR */
+
+.taskBar {
+    z-index: 100;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    border: 1px solid darkgray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.appList {
+    flex: 1 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+    .appList > div {
+        height: 40px;
+        width: 200px;
+        margin: 4px;
+        border: 1px darkgray;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .appList span:first-child {
+        font-size: 30px;
+        line-height: 30px;
+        width: 30px;
+        text-align: center;
+        margin: 0 4px;
+    }
+
+.clock {
+    float: right;
+    height: 40px;
+    width: 80px;
+    border: 1px inset darkgray;
+    text-align: center;
+    margin: 4px;
+    line-height: 36px;
+}
+
+.startButton {
+    height: 40px;
+    width: 40px;
+    margin: 4px;
+    border-width: 2px;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 0;
+}
+
+/* WINDOW */
+
+.window {
+    background-color: black;
+    position: absolute;
+    border: 1px solid darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.appWindow {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.titleBar {
+    flex-shrink: 1;
+    height: 28px;
+    border-bottom: 1px solid darkgray;
+}
+
+.statusBar {
+    height: 20px;
+    border-top: 1px solid darkgray;
+    flex-shrink: 0;
+}
+
+.gripper {
+    box-sizing: content-box;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    height: 0px;
+    width: 0px;
+    border-color: transparent transparent darkgray transparent;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+}
+
+.titleBar > button {
+    height: 23px;
+    width: 23px;
+    line-height: 0;
+    padding: 0;
+    text-align: center;
+    margin: 2px;
+    float: right;
+}
+
+.titleBar > span {
+    line-height: 26px;
+    font-weight: bold;
+}
+
+    .titleBar > span:first-child {
+        font-weight: normal;
+        margin-left: 8px;
+    }
+
+/* START MENU */
+
+.startMenu {
+    position: absolute;
+    left: 0px;
+    bottom: 50px;
+    z-index: 100;
+}
+
+.startMainMenu {
+    height: 500px;
+    width: 300px;
+    background-color: black;
+    border: 1px solid darkgray;
+}
+
+    .startMainMenu .menuItem {
+        height: 40px;
+        font-size: 1.25em;
+    }
+
+    .startMainMenu span:first-child {
+        font-size: 30px;
+        width: 30px;
+        text-align: center;
+        margin: 0 10px;
+    }
+
+.startSecondaryMenu {
+    width: 200px;
+    position: absolute;
+    border: 1px solid darkgray;
+    overflow: initial;
+}
+
+    .startSecondaryMenu .menuItem {
+        height: 30px;
+    }
+
+    .startSecondaryMenu span:first-child {
+        font-size: 25px;
+        width: 30px;
+        text-align: center;
+        margin: 0 5px;
+    }
+
+.menuItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+}
+
+    .menuItem:hover, .menuItem.active {
+        color: black;
+        background-color: darkgray;
+    }
+
+.childrenIndicator {
+    position: absolute;
+    right: 5px;
+}
