@@ -234,10 +234,10 @@ button {
     flex-direction: column;
 }
 
-.helpDialog > .titleBar {
-    border-bottom: 1px solid darkgray;
-    color: white;
-}
+    .helpDialog > .titleBar {
+        border-bottom: 1px solid darkgray;
+        color: white;
+    }
 
 .helpContent {
     overflow-y: auto;
@@ -356,10 +356,15 @@ button {
         padding: 0 5px;
     }
 
-        .currentDirectory .active, .currentDirectory > div:hover {
+        .currentDirectory > div:hover {
             color: black;
             background-color: darkgray;
         }
+
+    .currentDirectory .active, .currentDirectory .active:hover {
+        color: black;
+        background-color: white;
+    }
 
 .explorerItemIcon {
     width: 20px;
